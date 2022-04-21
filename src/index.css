@@ -48,7 +48,7 @@ code {
   background-color: var(--color-white);
   border-radius: 10px;
   margin: 2rem;
-  padding: 2rem;
+  padding: 1.3rem;
 }
 
 /* Comment */
@@ -56,9 +56,9 @@ code {
   align-items: center;
   display: grid;
   grid-column-gap: 0;
-  grid-row-gap: 0.7rem;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 0.5fr 1fr 0.5fr;
+  grid-row-gap: 1rem;
+  grid-template-columns: 0fr 1fr 1fr;
+  grid-template-rows: 0.1fr 1fr 0.3fr;
 }
 
 .comment-info-1 {
@@ -189,7 +189,19 @@ button {
 }
 .action__delete {
   color: var(--color-primary-red);
+  fill: var(--color-primary-red);
 }
 .action__reply {
   color: var(--color-primary-blue);
+  fill: var(--color-primary-blue);
+}
+
+.action__delete:hover {
+  color: var(--color-soft-red);
+  fill: var(--color-soft-red);
+}
+
+.action__reply:hover {
+  color: var(--color-soft-blue);
+  fill: var(--color-soft-blue);
 }
