@@ -1,13 +1,4 @@
 export const comments = [
-  // {
-  //   // currentUser: {
-  //   //   image: {
-  //   //     png: "./images/avatars/image-juliusomo.png",
-  //   //     webp: "./images/avatars/image-juliusomo.webp",
-  //   //   },
-  //   //   username: "juliusomo",
-  //   // },
-  //   comments: [
   {
     id: 1,
     content:
@@ -69,8 +60,6 @@ export const comments = [
       },
     ],
   },
-  //   ],
-  // },
 ];
 
 export function getComments() {
