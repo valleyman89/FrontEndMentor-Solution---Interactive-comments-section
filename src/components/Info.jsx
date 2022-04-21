@@ -6,11 +6,11 @@ class Info extends Component {
 
     return (
       <React.Fragment>
-        <div className="comment__avatar grid-info-1">
+        <div className="comment__avatar comment-info-1">
           <img src={avatar} alt="profile" />
         </div>
-        <div className="comment__username grid-info-2">{user}</div>
-        <div className="grid-info-3">{date}</div>
+        <div className="comment__username comment-info-2">{user}</div>
+        <div className="comment-info-3">{date}</div>
       </React.Fragment>
     );
   }

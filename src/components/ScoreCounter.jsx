@@ -6,7 +6,7 @@ function ScoreCounter(props) {
   const [count, setState] = useState(props.score);
   return (
     <React.Fragment>
-      <div className="grid-action-1">
+      <div className="comment-action-1">
         <div className="btn">
           <button className="btn-plus" onClick={() => setState(count + 1)}>
             <Plus />

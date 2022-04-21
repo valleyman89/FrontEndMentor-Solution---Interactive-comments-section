@@ -13,14 +13,14 @@ class Comment extends Component {
       <React.Fragment>
         {data.map((comment) => {
           return (
-            <div key={comment.id} className="comment grid">
+            <div key={comment.id} className="box comment">
               <Info
                 user={comment.user.username}
                 date={comment.createdAt}
                 avatar={comment.user.image.png}
               />
 
-              <span className="grid-content">{comment.content}</span>
+              <span className="comment-content">{comment.content}</span>
               <ScoreCounter score={comment.score} />
               <Delete id={comment.id} />
               <Reply />
