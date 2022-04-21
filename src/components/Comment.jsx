@@ -23,7 +23,7 @@ class Comment extends Component {
                 />
                 <span className="comment-content">{comment.content}</span>
                 <ScoreCounter score={comment.score} />
-                {/* <Delete id={comment.id} /> */}
+                <Delete id={comment.id} />
                 <Reply />
               </div>
               {comment.replies.map((reply) => (
@@ -35,6 +35,7 @@ class Comment extends Component {
                   />
                   <span className="comment-content">{reply.content}</span>
                   <ScoreCounter score={reply.score} />
+                  <Delete />
                   <Reply />
                 </div>
               ))}
