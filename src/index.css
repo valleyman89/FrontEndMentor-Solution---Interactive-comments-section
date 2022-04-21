@@ -87,13 +87,17 @@ code {
   grid-area: 3 / 3 / 4 / 4;
 }
 
+.comment--reply {
+  margin-left: 5rem;
+  box-shadow: -1.5rem 0rem 1rem 0rem var(--color-soft-gray);
+}
+
 .comment__avatar {
   text-align: left;
 }
 .comment__avatar img {
   width: 32px;
 }
-
 .comment__username {
   font-weight: 700;
 }

@@ -27,7 +27,7 @@ class Comment extends Component {
                 <Reply />
               </div>
               {comment.replies.map((reply) => (
-                <div key={reply.id} className="box comment">
+                <div key={reply.id} className="box comment comment--reply">
                   <Info
                     user={reply.user.username}
                     date={reply.createdAt}
