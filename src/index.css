@@ -57,39 +57,42 @@ code {
   display: grid;
   grid-column-gap: 0;
   grid-row-gap: 1rem;
-  grid-template-columns: 0fr 1fr 1fr;
-  grid-template-rows: 0.1fr 1fr 0.3fr;
+  grid-template-columns: 0.5fr 0.5fr 0.8fr 1fr;
+  grid-template-rows: 0.5fr 1fr 0.5fr;
 }
 
 .comment-info-1 {
   grid-area: 1 / 1 / 2 / 2;
 }
 .comment-info-2 {
+  justify-items: center;
   grid-area: 1 / 2 / 2 / 3;
 }
 .comment-info-3 {
+  justify-self: center;
   grid-area: 1 / 3 / 2 / 4;
 }
+.comment-info-4 {
+  grid-area: 1 / 4 / 2 / 5;
+}
 .comment-content {
-  grid-area: 2 / 1 / 3 / 4;
+  grid-area: 2 / 1 / 3 / 5;
 }
 .comment-action-1 {
-  grid-area: 3 / 1 / 4 / 2;
+  grid-area: 3 / 1 / 4 / 3;
 }
 .comment-action-2 {
   justify-self: end;
-
-  grid-area: 3 / 2 / 4 / 3;
+  grid-area: 3 / 3 / 4 / 4;
 }
 .comment-action-3 {
   justify-self: end;
-
-  grid-area: 3 / 3 / 4 / 4;
+  grid-area: 3 / 4 / 4 / 5;
 }
 
 .comment--reply {
   margin-left: 5rem;
-  box-shadow: -1.5rem 0rem 1rem 0rem var(--color-soft-gray);
+  box-shadow: -1rem 0rem 0.2rem 0rem var(--color-soft-gray);
 }
 
 .comment__avatar {
@@ -100,6 +103,14 @@ code {
 }
 .comment__username {
   font-weight: 700;
+}
+
+.comment__currentuser {
+  background-color: var(--color-primary-blue);
+  border-radius: 5px;
+  color: var(--color-white);
+  font-weight: 400;
+  padding: 0 1rem;
 }
 
 /* Reply */
@@ -141,7 +152,7 @@ code {
 button {
   all: unset;
   cursor: pointer;
-  margin: 1rem;
+  margin: 0rem;
 }
 .btn {
   background-color: var(--color-soft-gray);
@@ -204,4 +215,61 @@ button {
 .action__reply:hover {
   color: var(--color-soft-blue);
   fill: var(--color-soft-blue);
+}
+
+/* Modal */
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container {
+  width: 90vw;
+  height: 70vw;
+  border-radius: 12px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+  justify-content: center;
+}
+
+.header {
+  color: var(--color-neutral-blue);
+  font-size: 1.4rem;
+  text-align: left;
+}
+.body {
+  font-size: 1.7rem;
+  text-align: justify;
+}
+.footer {
+  display: flex;
+}
+
+.modal-container .footer button {
+  border-radius: 10px;
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+  font-weight: 500;
+  height: 5rem;
+  margin: 0rem 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  width: 75%;
+}
+.modal-container .footer .safe {
+  background-color: var(--color-neutral-gray);
+}
+.modal-container .footer .danger {
+  background-color: var(--color-primary-red);
 }
