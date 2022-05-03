@@ -9,5 +9,5 @@ export const user = {
 };
 
 export function getUsers() {
-  return users.filter((c) => c);
+  return user;
 }
