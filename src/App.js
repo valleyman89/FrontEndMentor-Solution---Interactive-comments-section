@@ -1,8 +1,13 @@
 import "./App.css";
-import Comment from "./components/Comment";
+import Comments from "./components/Comments";
+import React from "react";
 
 function App() {
-  return <Comment />;
+  return (
+    <React.Fragment>
+      <Comments />
+    </React.Fragment>
+  );
 }
 
 export default App;
