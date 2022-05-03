@@ -3,7 +3,12 @@ import React from "react";
 function input(props) {
   return (
     <div>
-      <textarea className="input" placeholder="Add a comment..."></textarea>
+      <textarea
+        ref={props.formRef}
+        className="input"
+        defaultValue={props.value}
+        placeholder="Add a comment..."
+      ></textarea>
     </div>
   );
 }
