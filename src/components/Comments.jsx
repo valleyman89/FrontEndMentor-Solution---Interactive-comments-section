@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from "react";
+import React, { useState } from "react";
 import { getComments } from "../services/data";
 import { getUsers } from "../services/user";
 import Delete from "./Delete";
@@ -8,7 +8,7 @@ import ScoreCounter from "./ScoreCounter";
 import CreateComment from "./CreateComment";
 
 function Comments(props) {
-  const [users, setUsers] = useState(getUsers);
+  const [users] = useState(getUsers);
   const [comments, setComments] = useState(getComments);
 
   const handleReply = (comment) => {
