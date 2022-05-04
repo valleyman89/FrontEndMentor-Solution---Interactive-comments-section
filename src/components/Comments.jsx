@@ -3,9 +3,9 @@ import { getComments } from "../services/data";
 import { getUsers } from "../services/user";
 import Delete from "./Delete";
 import Info from "./Info";
-import Reply from "./Reply";
+import Update from "./Update";
 import ScoreCounter from "./ScoreCounter";
-import CreateReply from "./CreateReply";
+import CreateComment from "./CreateComment";
 
 function Comments(props) {
   const [users, setUsers] = useState(getUsers);
@@ -13,6 +13,17 @@ function Comments(props) {
 
   const handleReply = (comment) => {
     setComments([...comments, comment]);
+  };
+
+  const handleUpdate = (id, content) => {
+    const updatedComments = comments.map((c) => {
+      if (c.id === id) {
+        return { ...c, content };
+      } else {
+        return c;
+      }
+    });
+    setComments(updatedComments);
   };
 
   const handleDelete = (id, comment) => {
@@ -52,7 +63,12 @@ function Comments(props) {
                   onDelete={handleDelete}
                 />
               ) : null}
-              <Reply user={comment.user.username} />
+              <Update
+                comment={comment}
+                id={comment.id}
+                onUpdate={handleUpdate}
+                user={comment.user.username}
+              />
             </div>
             {comment.replies.map((reply) => (
               <div key={reply.id} className="box comment comment--reply">
@@ -70,13 +86,13 @@ function Comments(props) {
                     onDelete={handleDeleteReply}
                   />
                 ) : null}
-                <Reply user={reply.user.username} />
+                <Update user={reply.user.username} />
               </div>
             ))}
           </React.Fragment>
         );
       })}
-      <CreateReply comments={comments} onReply={handleReply} />
+      <CreateComment comments={comments} onReply={handleReply} />
     </React.Fragment>
   );
 }
