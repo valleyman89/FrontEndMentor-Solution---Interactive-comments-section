@@ -1,8 +1,6 @@
 import React from "react";
 
-function Modal({ closeModal, commentId, comment, handleDelete }) {
-  //const { handleDelete, id } = props;
-
+function DeleteModal({ closeModal, commentId, comment, handleDelete }) {
   return (
     <div className="modal">
       <div className="modal-container">
@@ -38,4 +36,4 @@ function Modal({ closeModal, commentId, comment, handleDelete }) {
   );
 }
 
-export default Modal;
+export default DeleteModal;

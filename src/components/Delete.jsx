@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ReactComponent as IconDelete } from "../svg/icon-delete.svg";
-import Modal from "./Modal";
+import DeleteModal from "./DeleteModal";
 
 function Delete(props) {
   const { id, comment, onDelete } = props;
@@ -9,7 +9,7 @@ function Delete(props) {
   return (
     <React.Fragment>
       {openModal && (
-        <Modal
+        <DeleteModal
           handleDelete={onDelete}
           commentId={id}
           comment={comment}
