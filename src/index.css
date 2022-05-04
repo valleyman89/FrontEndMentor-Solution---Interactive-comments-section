@@ -129,7 +129,7 @@ code {
     grid-template-rows: 0.3fr 0.7fr;
     grid-column-gap: 0rem;
     grid-row-gap: 0px;
-    padding: 2rem;
+    padding: 1rem 2rem;
     margin: 2rem 25rem;
   }
   .comment-info-1 {
@@ -142,17 +142,14 @@ code {
   }
   .comment-info-3 {
     align-self: center;
-
     grid-area: 1 / 4 / 2 / 5;
   }
   .comment-info-4 {
     align-self: center;
-
     grid-area: 1 / 5 / 2 / 6;
   }
   .comment-content {
-    align-self: center;
-
+    align-self: flex-start;
     grid-area: 2 / 2 / 3 / 8;
   }
   .comment-action-1 {
