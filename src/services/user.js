@@ -4,7 +4,7 @@ export const user = {
       png: "./images/avatars/image-juliusomo.png",
       webp: "./images/avatars/image-juliusomo.webp",
     },
-    username: "juliusomo",
+    username: "amyrobson",
   },
 };
 
