@@ -6,6 +6,7 @@ import Info from "./Info";
 import Update from "./Update";
 import ScoreCounter from "./ScoreCounter";
 import CreateComment from "./CreateComment";
+import Reply from "./Reply";
 
 function Comments(props) {
   const [users] = useState(getUsers);
@@ -13,6 +14,10 @@ function Comments(props) {
 
   const handleReply = (comment) => {
     setComments([...comments, comment]);
+  };
+
+  const handleCommentReply = (comment) => {
+    console.log(comment);
   };
 
   const handleUpdate = (id, content) => {
@@ -57,18 +62,22 @@ function Comments(props) {
               <span className="comment-content">{comment.content}</span>
               <ScoreCounter score={comment.score} />
               {comment.user.username === users.currentUser.username ? (
-                <Delete
-                  id={comment.id}
-                  comment={comment}
-                  onDelete={handleDelete}
-                />
-              ) : null}
-              <Update
-                comment={comment}
-                id={comment.id}
-                onUpdate={handleUpdate}
-                user={comment.user.username}
-              />
+                <React.Fragment>
+                  <Delete
+                    id={comment.id}
+                    comment={comment}
+                    onDelete={handleDelete}
+                  />
+                  <Update
+                    comment={comment}
+                    id={comment.id}
+                    onUpdate={handleUpdate}
+                    user={comment.user.username}
+                  />
+                </React.Fragment>
+              ) : (
+                <Reply comment={comment} onCommentReply={handleCommentReply} />
+              )}
             </div>
             {comment.replies.map((reply) => (
               <div key={reply.id} className="box comment comment--reply">
@@ -86,7 +95,11 @@ function Comments(props) {
                     onDelete={handleDeleteReply}
                   />
                 ) : null}
-                <Update user={reply.user.username} />
+                <Update
+                  comment={comment}
+                  onUpdate={handleCommentReply}
+                  user={reply.user.username}
+                />
               </div>
             ))}
           </React.Fragment>
