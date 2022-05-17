@@ -35,7 +35,7 @@ function UpdateModal({ closeModal, id, comment, handleUpdate }) {
               discard
             </button>
             <button type="submit" className="danger">
-              save!
+              update!
             </button>
           </div>
         </div>
