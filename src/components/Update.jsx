@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { ReactComponent as IconReply } from "../svg/icon-reply.svg";
 import { ReactComponent as IconEdit } from "../svg/icon-edit.svg";
 import { getUsers } from "../services/user";
 import UpdateModal from "./UpdateModal";
@@ -9,7 +8,6 @@ function Update(props) {
   const [openModal, setOpenModal] = useState(false);
 
   const { user, id, comment, onUpdate } = props;
-  const { currentUser } = users;
 
   return (
     <React.Fragment>
@@ -27,8 +25,7 @@ function Update(props) {
             setOpenModal(true);
           }}
         >
-          {user === currentUser.username ? <IconEdit /> : <IconReply />}
-          {user === currentUser.username ? " Edit" : " Reply"}
+          <IconEdit /> Edit
         </button>
       </div>
     </React.Fragment>
