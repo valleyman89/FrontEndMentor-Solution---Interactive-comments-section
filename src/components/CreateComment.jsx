@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { getUsers } from "../services/user";
 
-const CreateComment = (props) => {
-  const { onReply, comments } = props;
+const CreateComment = ({ onReply, comments }) => {
   const { currentUser } = getUsers();
 
   const [commentText, setCommentText] = useState("");
-  const [idCounter, setIdCounter] = useState(0);
+  const [idCounter, setIdCounter] = useState(comments.length + 1);
 
   const handleOnSubmit = (e) => {
-    setIdCounter(idCounter + comments.length + 1);
-
     e.preventDefault();
+    setIdCounter((prev) => prev + 1);
 
     const newComment = {
       id: idCounter,
@@ -27,7 +25,6 @@ const CreateComment = (props) => {
       },
       replies: [],
     };
-
     onReply(newComment);
     setCommentText("");
   };
