@@ -1,21 +1,17 @@
 import React, { useState } from "react";
 import { ReactComponent as IconReply } from "../svg/icon-reply.svg";
-import { getUsers } from "../services/user";
 import ReplyModal from "./ReplyModal";
 
 function Update(props) {
-  const [users] = useState(getUsers);
   const [openModal, setOpenModal] = useState(false);
 
-  const { user, id, comment, onReply } = props;
-  const { currentUser } = users;
-
+  const { parentId, comment, onReply } = props;
   return (
     <React.Fragment>
       {openModal && (
         <ReplyModal
           comment={comment}
-          id={id}
+          parentId={parentId}
           handleReply={onReply}
           closeModal={setOpenModal}
         />

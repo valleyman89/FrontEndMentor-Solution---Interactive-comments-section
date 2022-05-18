@@ -1,12 +1,33 @@
 import React, { useState } from "react";
+import { getUsers } from "../services/user";
 
-function ReplyModal({ closeModal }) {
-  const [commentText, setCommentText] = useState(false);
+const ReplyModal = ({ closeModal, parentId, comment, handleReply }) => {
+  const { currentUser } = getUsers();
+  const [replyText, setReplyText] = useState(false);
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log("submitted");
+    let generateNewId = comment.replies.length + 1;
+    const commentArray = comment.replies.slice(-1).pop();
+    if (commentArray) {
+      generateNewId = commentArray.id + 1;
+    }
+    const newReply = {
+      id: generateNewId,
+      content: replyText,
+      createdAt: "a moment ago",
+      score: 0,
+      replyingTo: comment.user.username,
+      user: {
+        image: {
+          png: "./images/avatars/image-" + currentUser.username + ".png",
+          webp: "./images/avatars/image-" + currentUser.username + ".webp",
+        },
+        username: currentUser.username,
+      },
+    };
     closeModal(false);
+    handleReply(parentId, newReply);
   };
 
   return (
@@ -21,7 +42,7 @@ function ReplyModal({ closeModal }) {
               className="input update"
               name="commentTextArea"
               type="text"
-              onChange={(e) => setCommentText(e.target.value)}
+              onChange={(e) => setReplyText(e.target.value)}
             />
           </div>
           <div className="footer">
@@ -42,6 +63,6 @@ function ReplyModal({ closeModal }) {
       </div>
     </form>
   );
-}
+};
 
 export default ReplyModal;
