@@ -12,15 +12,14 @@ function Comments(props) {
   const [users] = useState(getUsers);
   const [comments, setComments] = useState(getComments);
 
-  const handleReply = (comment) => {
+  //// COMMENTS
+  // comments: create
+  const handleCreateComment = (comment) => {
     setComments([...comments, comment]);
+    console.log("handleCreateComment called");
   };
-
-  const handleCommentReply = (comment) => {
-    console.log(comment);
-  };
-
-  const handleUpdate = (id, content) => {
+  // comments: update
+  const handleUpdateComment = (id, content) => {
     const updatedComments = comments.map((c) => {
       if (c.id === id) {
         return { ...c, content };
@@ -29,14 +28,39 @@ function Comments(props) {
       }
     });
     setComments(updatedComments);
+    console.log("handleUpdateComment called");
   };
-
-  const handleDelete = (id, comment) => {
+  // comments: delete
+  const handleDeleteComment = (id, comment) => {
     const ogComments = comments;
     const newComments = ogComments.filter((c) => c.id !== comment.id);
     setComments(newComments);
+    console.log("handleDeleteComment called");
   };
 
+  //// REPLIES
+  // replies: create
+  const handleCreateReply = (parentId, comment) => {
+    console.log("handleCreateReply called");
+    //console.log("parent id:", parentId);
+    // console.log("comment: ", comment);
+
+    const newComments = comments.map((c) => c);
+    //console.log("newComments", "\n", newComments);
+
+    const commentWithReplyToCreate = newComments.find((c) => c.id === parentId);
+    //console.log("commentWithReplyToCreate", "\n", commentWithReplyToCreate);
+
+    commentWithReplyToCreate.replies.push(comment);
+    setComments(newComments);
+  };
+  // replies: update
+  const handleUpdateReply = (parentId, comment) => {
+    console.log("handleUpdateReply called");
+    console.log("parent id:", parentId);
+    console.log("new reply: ", comment);
+  };
+  // replies: delete
   const handleDeleteReply = (id, comment) => {
     const newComments = comments.map((c) => c);
     const commentWithReplyToDelete = newComments.find(
@@ -46,10 +70,12 @@ function Comments(props) {
       (r) => r.id !== id
     );
     setComments(newComments);
+    console.log("handleDeleteReply called");
   };
 
   return (
     <React.Fragment>
+      {/* COMMENTS */}
       {comments.map((comment) => {
         return (
           <React.Fragment key={comment.id}>
@@ -66,19 +92,24 @@ function Comments(props) {
                   <Delete
                     id={comment.id}
                     comment={comment}
-                    onDelete={handleDelete}
+                    onDelete={handleDeleteComment}
                   />
                   <Update
                     comment={comment}
                     id={comment.id}
-                    onUpdate={handleUpdate}
+                    onUpdate={handleUpdateComment}
                     user={comment.user.username}
                   />
                 </React.Fragment>
               ) : (
-                <Reply comment={comment} onCommentReply={handleCommentReply} />
+                <Reply
+                  parentId={comment.id}
+                  comment={comment}
+                  onReply={handleCreateReply}
+                />
               )}
             </div>
+            {/* REPLIES */}
             {comment.replies.map((reply) => (
               <div key={reply.id} className="box comment comment--reply">
                 <Info
@@ -89,23 +120,32 @@ function Comments(props) {
                 <span className="comment-content">{reply.content}</span>
                 <ScoreCounter score={reply.score} />
                 {reply.user.username === users.currentUser.username ? (
-                  <Delete
-                    id={reply.id}
+                  <React.Fragment>
+                    <Delete
+                      id={reply.id}
+                      comment={comment}
+                      onDelete={handleDeleteReply}
+                    />
+                    <Update
+                      id={reply.id}
+                      comment={comment}
+                      onUpdate={handleUpdateReply}
+                      user={reply.user.username}
+                    />
+                  </React.Fragment>
+                ) : (
+                  <Reply
+                    parentId={comment.id}
                     comment={comment}
-                    onDelete={handleDeleteReply}
+                    onCommentReply={handleCreateReply}
                   />
-                ) : null}
-                <Update
-                  comment={comment}
-                  onUpdate={handleCommentReply}
-                  user={reply.user.username}
-                />
+                )}
               </div>
             ))}
           </React.Fragment>
         );
       })}
-      <CreateComment comments={comments} onReply={handleReply} />
+      <CreateComment comments={comments} onReply={handleCreateComment} />
     </React.Fragment>
   );
 }
