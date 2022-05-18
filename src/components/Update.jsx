@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { ReactComponent as IconEdit } from "../svg/icon-edit.svg";
-import { getUsers } from "../services/user";
 import UpdateModal from "./UpdateModal";
 
 function Update(props) {
-  const [users] = useState(getUsers);
   const [openModal, setOpenModal] = useState(false);
 
-  const { user, id, comment, onUpdate } = props;
+  const { id, comment, onUpdate } = props;
 
   return (
     <React.Fragment>
