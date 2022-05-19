@@ -42,15 +42,9 @@ function Comments(props) {
   // replies: create
   const handleCreateReply = (parentId, comment) => {
     console.log("handleCreateReply called");
-    //console.log("parent id:", parentId);
-    // console.log("comment: ", comment);
 
     const newComments = comments.map((c) => c);
-    //console.log("newComments", "\n", newComments);
-
     const commentWithReplyToCreate = newComments.find((c) => c.id === parentId);
-    //console.log("commentWithReplyToCreate", "\n", commentWithReplyToCreate);
-
     commentWithReplyToCreate.replies.push(comment);
     setComments(newComments);
   };
