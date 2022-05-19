@@ -358,7 +358,8 @@ button {
 
 @media screen and (min-width: 1000px) {
   .modal-container {
-    width: 30vw;
-    height: 30vh;
+    width: 50vw;
+    height: fit-content;
+    margin: 2rem;
   }
 }
