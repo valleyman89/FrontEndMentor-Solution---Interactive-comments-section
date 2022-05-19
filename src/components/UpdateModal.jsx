@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-function UpdateModal({ closeModal, id, comment, handleUpdate }) {
+function UpdateModal({ closeModal, id, parentId, comment, handleUpdate }) {
   const [commentText, setCommentText] = useState(comment.content);
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
     closeModal(false);
-    handleUpdate(id, commentText);
+    handleUpdate(id, parentId, commentText);
   };
   return (
     <form onSubmit={handleOnSubmit}>

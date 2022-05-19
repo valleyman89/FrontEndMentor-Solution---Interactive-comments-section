@@ -5,7 +5,7 @@ import UpdateModal from "./UpdateModal";
 function Update(props) {
   const [openModal, setOpenModal] = useState(false);
 
-  const { id, comment, onUpdate } = props;
+  const { id, parentId, comment, onUpdate } = props;
 
   return (
     <React.Fragment>
@@ -13,6 +13,7 @@ function Update(props) {
         <UpdateModal
           comment={comment}
           id={id}
+          parentId={parentId}
           handleUpdate={onUpdate}
           closeModal={setOpenModal}
         />
