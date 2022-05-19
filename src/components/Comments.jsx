@@ -16,10 +16,9 @@ function Comments(props) {
   // comments: create
   const handleCreateComment = (comment) => {
     setComments([...comments, comment]);
-    console.log("handleCreateComment called");
   };
   // comments: update
-  const handleUpdateComment = (id, content) => {
+  const handleUpdateComment = (id, parentId, content) => {
     const updatedComments = comments.map((c) => {
       if (c.id === id) {
         return { ...c, content };
@@ -28,14 +27,12 @@ function Comments(props) {
       }
     });
     setComments(updatedComments);
-    console.log("handleUpdateComment called");
   };
   // comments: delete
   const handleDeleteComment = (id, comment) => {
     const ogComments = comments;
     const newComments = ogComments.filter((c) => c.id !== comment.id);
     setComments(newComments);
-    console.log("handleDeleteComment called");
   };
 
   //// REPLIES
@@ -49,11 +46,9 @@ function Comments(props) {
     setComments(newComments);
   };
   // replies: update
-  const handleUpdateReply = (parentId, comment) => {
-    console.log("handleUpdateReply called");
-    console.log("parent id:", parentId);
-    console.log("new reply: ", comment);
-  };
+  // TODO: START
+  const handleUpdateReply = (id, parentId, comment) => {};
+  // TODO: END
   // replies: delete
   const handleDeleteReply = (id, comment) => {
     const newComments = comments.map((c) => c);
@@ -64,7 +59,6 @@ function Comments(props) {
       (r) => r.id !== id
     );
     setComments(newComments);
-    console.log("handleDeleteReply called");
   };
 
   return (
@@ -92,7 +86,6 @@ function Comments(props) {
                     comment={comment}
                     id={comment.id}
                     onUpdate={handleUpdateComment}
-                    user={comment.user.username}
                   />
                 </React.Fragment>
               ) : (
@@ -123,8 +116,8 @@ function Comments(props) {
                     <Update
                       id={reply.id}
                       comment={reply}
+                      parentId={comment.id}
                       onUpdate={handleUpdateReply}
-                      user={reply.user.username}
                     />
                   </React.Fragment>
                 ) : (
