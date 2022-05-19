@@ -122,7 +122,7 @@ function Comments(props) {
                     />
                     <Update
                       id={reply.id}
-                      comment={comment}
+                      comment={reply}
                       onUpdate={handleUpdateReply}
                       user={reply.user.username}
                     />
