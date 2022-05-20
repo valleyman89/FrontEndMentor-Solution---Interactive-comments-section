@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { getUsers } from "../services/user";
 
-const ReplyModal = ({ closeModal, parentId, comment, handleReply }) => {
+const ReplyModal = ({
+  closeModal,
+  parentId,
+  comment,
+  originalPoster,
+  handleReply,
+}) => {
   const { currentUser } = getUsers();
   const [replyText, setReplyText] = useState(false);
 
@@ -17,7 +23,7 @@ const ReplyModal = ({ closeModal, parentId, comment, handleReply }) => {
       content: replyText,
       createdAt: "a moment ago",
       score: 0,
-      replyingTo: comment.user.username,
+      replyingTo: originalPoster,
       user: {
         image: {
           png: "./images/avatars/image-" + currentUser.username + ".png",

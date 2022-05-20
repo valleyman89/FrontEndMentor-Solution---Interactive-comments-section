@@ -5,7 +5,7 @@ import ReplyModal from "./ReplyModal";
 function Update(props) {
   const [openModal, setOpenModal] = useState(false);
 
-  const { parentId, comment, onReply } = props;
+  const { parentId, comment, originalPoster, onReply } = props;
   return (
     <React.Fragment>
       {openModal && (
@@ -13,6 +13,7 @@ function Update(props) {
           comment={comment}
           parentId={parentId}
           handleReply={onReply}
+          originalPoster={originalPoster}
           closeModal={setOpenModal}
         />
       )}
