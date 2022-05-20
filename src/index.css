@@ -38,7 +38,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1272px) {
   body {
     font-size: 1.5rem;
   }
@@ -123,7 +123,7 @@ code {
   font-weight: 400;
   padding: 0 1rem;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1272px) {
   .comment {
     align-items: baseline;
     display: grid;
@@ -195,7 +195,7 @@ code {
   justify-self: end;
   grid-area: 2 / 2 / 3 / 3;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1272px) {
   .reply {
     margin: 2rem 25rem;
   }
@@ -263,7 +263,7 @@ button {
   background-color: var(--color-soft-blue);
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1272px) {
   .btn {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
@@ -359,7 +359,7 @@ button {
   background-color: var(--color-primary-red);
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1272px) {
   .modal-container {
     width: 50vw;
     height: fit-content;
