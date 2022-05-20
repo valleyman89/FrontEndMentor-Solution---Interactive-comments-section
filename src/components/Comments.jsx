@@ -38,17 +38,28 @@ function Comments(props) {
   //// REPLIES
   // replies: create
   const handleCreateReply = (parentId, comment) => {
-    console.log("handleCreateReply called");
-
     const newComments = comments.map((c) => c);
     const commentWithReplyToCreate = newComments.find((c) => c.id === parentId);
     commentWithReplyToCreate.replies.push(comment);
     setComments(newComments);
   };
   // replies: update
-  // TODO: START
-  const handleUpdateReply = (id, parentId, comment) => {};
-  // TODO: END
+  const handleUpdateReply = (id, parentId, comment) => {
+    const updatedComments = comments.map((c) => c);
+    const commentWithReplyToUpdate = updatedComments.find(
+      (c) => c.id === parentId
+    );
+    commentWithReplyToUpdate.replies = commentWithReplyToUpdate.replies.map(
+      (r) => {
+        if (r.id === id) {
+          return { ...r, content: comment };
+        } else {
+          return r;
+        }
+      }
+    );
+    setComments(updatedComments);
+  };
   // replies: delete
   const handleDeleteReply = (id, comment) => {
     const newComments = comments.map((c) => c);
