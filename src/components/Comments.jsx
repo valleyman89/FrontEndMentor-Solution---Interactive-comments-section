@@ -104,6 +104,7 @@ function Comments(props) {
                   parentId={comment.id}
                   comment={comment}
                   onReply={handleCreateReply}
+                  originalPoster={comment.user.username}
                 />
               )}
             </div>
@@ -115,7 +116,12 @@ function Comments(props) {
                   date={reply.createdAt}
                   avatar={reply.user.image.png}
                 />
-                <span className="comment-content">{reply.content}</span>
+                <span className="comment-content">
+                  <span className="comment-original-poster">
+                    @{reply.replyingTo}
+                  </span>{" "}
+                  {reply.content}
+                </span>
                 <ScoreCounter score={reply.score} />
                 {reply.user.username === users.currentUser.username ? (
                   <React.Fragment>
@@ -136,6 +142,7 @@ function Comments(props) {
                     parentId={comment.id}
                     comment={comment}
                     onReply={handleCreateReply}
+                    originalPoster={reply.user.username}
                   />
                 )}
               </div>
