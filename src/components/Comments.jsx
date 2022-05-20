@@ -8,7 +8,7 @@ import ScoreCounter from "./ScoreCounter";
 import CreateComment from "./CreateComment";
 import Reply from "./Reply";
 
-function Comments(props) {
+function Comments() {
   const [users] = useState(getUsers);
   const [comments, setComments] = useState(getComments);
 
