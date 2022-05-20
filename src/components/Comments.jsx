@@ -135,7 +135,7 @@ function Comments(props) {
                   <Reply
                     parentId={comment.id}
                     comment={comment}
-                    onCommentReply={handleCreateReply}
+                    onReply={handleCreateReply}
                   />
                 )}
               </div>
