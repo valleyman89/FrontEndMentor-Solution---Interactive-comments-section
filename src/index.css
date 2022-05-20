@@ -109,10 +109,13 @@ code {
 .comment__avatar img {
   width: 32px;
 }
+.comment-original-poster {
+  font-weight: 700;
+  color: var(--color-primary-blue);
+}
 .comment__username {
   font-weight: 700;
 }
-
 .comment__currentuser {
   background-color: var(--color-primary-blue);
   border-radius: 5px;
