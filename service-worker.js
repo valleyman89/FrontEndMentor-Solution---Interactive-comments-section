@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/FrontEndMentor-Solution---Interactive-comments-section/precache-manifest.2cae5dadbd85789963eb7b8271a6ee8b.js"
+  "/FrontEndMentor-Solution---Interactive-comments-section/precache-manifest.ff31457bef41647ae5fd448f8310d550.js"
 );
 
 workbox.clientsClaim();
