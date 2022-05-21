@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/valleyman89/FrontEndMentor-Solution---Interactive-comments-section/precache-manifest.55cb603240e5cf35f446b303983c7108.js"
+  "/FrontEndMentor-Solution---Interactive-comments-section/precache-manifest.ccda5b7b9de00ad82ec5294535894f84.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/valleyman89/FrontEndMentor-Solution---Interactive-comments-section/index.html", {
+workbox.routing.registerNavigationRoute("/FrontEndMentor-Solution---Interactive-comments-section/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
