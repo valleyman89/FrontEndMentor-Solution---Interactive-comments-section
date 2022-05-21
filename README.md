@@ -26,16 +26,16 @@ Users should be able to:
 - Upvote and downvote comments ✅
 - **Bonus objectives not completed** ❌
 
-### Screenshot
-
-![](./screenshot-desktop.png)
-![](./screenshot-mobile.png)
-
 ### Links
 
 - Solution URL: []()
 - Live Site URL: [https://valleyman89.github.io/FrontEndMentor-Solution---Interactive-comments-section/](https://valleyman89.github.io/FrontEndMentor-Solution---Interactive-comments-section/)
 - GitHub Repo: [https://github.com/valleyman89/FrontEndMentor-Solution---Interactive-comments-section](https://github.com/valleyman89/FrontEndMentor-Solution---Interactive-comments-section)
+
+### Screenshot
+
+![](./screenshot-desktop.png)
+![](./screenshot-mobile.png)
 
 ## My process
 
