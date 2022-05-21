@@ -23,8 +23,7 @@ function Update(props) {
             setOpenModal(true);
           }}
         >
-          <IconReply />
-          Reply
+          <IconReply /> Reply
         </button>
       </div>
     </React.Fragment>
