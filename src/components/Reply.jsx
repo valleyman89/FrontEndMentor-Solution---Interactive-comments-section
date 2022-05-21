@@ -10,11 +10,11 @@ function Update(props) {
     <React.Fragment>
       {openModal && (
         <ReplyModal
+          closeModal={setOpenModal}
           comment={comment}
-          parentId={parentId}
           handleReply={onReply}
           originalPoster={originalPoster}
-          closeModal={setOpenModal}
+          parentId={parentId}
         />
       )}
       <div className="action action__reply comment-action-3">

@@ -11,11 +11,11 @@ function Update(props) {
     <React.Fragment>
       {openModal && (
         <UpdateModal
+          closeModal={setOpenModal}
           comment={comment}
+          handleUpdate={onUpdate}
           id={id}
           parentId={parentId}
-          handleUpdate={onUpdate}
-          closeModal={setOpenModal}
         />
       )}
       <div className="action action__reply comment-action-3">

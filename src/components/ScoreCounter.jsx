@@ -16,8 +16,8 @@ function ScoreCounter(props) {
       <div className="comment-action-1">
         <div className="btn">
           <button
-            disabled={disable}
             className="btn-plus"
+            disabled={disable}
             onClick={() => handleVote("up")}
           >
             <Plus />

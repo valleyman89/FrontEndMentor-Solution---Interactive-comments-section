@@ -18,10 +18,10 @@ function UpdateModal({ closeModal, id, parentId, comment, handleUpdate }) {
           <div className="body">
             <textarea
               className="input update"
-              name="commentTextArea"
-              type="text"
               defaultValue={comment.content}
+              name="commentTextArea"
               onChange={(e) => setCommentText(e.target.value)}
+              type="text"
             />
           </div>
           <div className="footer">
@@ -35,9 +35,9 @@ function UpdateModal({ closeModal, id, parentId, comment, handleUpdate }) {
               discard
             </button>
             <button
-              type="submit"
               className="btn-send"
               disabled={commentText.length < 1}
+              type="submit"
             >
               update!
             </button>

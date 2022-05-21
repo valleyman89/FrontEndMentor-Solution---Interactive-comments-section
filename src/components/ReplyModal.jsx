@@ -47,8 +47,8 @@ const ReplyModal = ({
             <textarea
               className="input update"
               name="commentTextArea"
-              type="text"
               onChange={(e) => setReplyText(e.target.value)}
+              type="text"
             />
           </div>
           <div className="footer">
@@ -62,9 +62,9 @@ const ReplyModal = ({
               discard
             </button>
             <button
-              type="submit"
               className="btn-send"
               disabled={replyText.length < 1}
+              type="submit"
             >
               reply!
             </button>

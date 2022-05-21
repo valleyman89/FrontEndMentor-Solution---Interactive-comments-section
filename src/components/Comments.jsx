@@ -80,17 +80,17 @@ function Comments() {
           <React.Fragment key={comment.id}>
             <div className="box comment">
               <Info
-                user={comment.user.username}
-                date={comment.createdAt}
                 avatar={comment.user.image.png}
+                date={comment.createdAt}
+                user={comment.user.username}
               />
               <span className="comment-content">{comment.content}</span>
               <ScoreCounter score={comment.score} />
               {comment.user.username === users.currentUser.username ? (
                 <React.Fragment>
                   <Delete
-                    id={comment.id}
                     comment={comment}
+                    id={comment.id}
                     onDelete={handleDeleteComment}
                   />
                   <Update
@@ -101,10 +101,10 @@ function Comments() {
                 </React.Fragment>
               ) : (
                 <Reply
-                  parentId={comment.id}
                   comment={comment}
                   onReply={handleCreateReply}
                   originalPoster={comment.user.username}
+                  parentId={comment.id}
                 />
               )}
             </div>
@@ -112,9 +112,9 @@ function Comments() {
             {comment.replies.map((reply) => (
               <div key={reply.id} className="box comment comment--reply">
                 <Info
-                  user={reply.user.username}
-                  date={reply.createdAt}
                   avatar={reply.user.image.png}
+                  date={reply.createdAt}
+                  user={reply.user.username}
                 />
                 <span className="comment-content">
                   <span className="comment-original-poster">
@@ -126,23 +126,23 @@ function Comments() {
                 {reply.user.username === users.currentUser.username ? (
                   <React.Fragment>
                     <Delete
-                      id={reply.id}
                       comment={comment}
+                      id={reply.id}
                       onDelete={handleDeleteReply}
                     />
                     <Update
-                      id={reply.id}
                       comment={reply}
-                      parentId={comment.id}
+                      id={reply.id}
                       onUpdate={handleUpdateReply}
+                      parentId={comment.id}
                     />
                   </React.Fragment>
                 ) : (
                   <Reply
-                    parentId={comment.id}
                     comment={comment}
                     onReply={handleCreateReply}
                     originalPoster={reply.user.username}
+                    parentId={comment.id}
                   />
                 )}
               </div>

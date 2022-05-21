@@ -10,10 +10,10 @@ function Delete(props) {
     <React.Fragment>
       {openModal && (
         <DeleteModal
-          handleDelete={onDelete}
-          commentId={id}
-          comment={comment}
           closeModal={setOpenModal}
+          comment={comment}
+          commentId={id}
+          handleDelete={onDelete}
         />
       )}
       <button
