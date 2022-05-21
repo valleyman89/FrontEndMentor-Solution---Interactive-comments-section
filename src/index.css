@@ -369,6 +369,14 @@ button {
 .modal-container .footer .danger {
   background-color: var(--color-primary-red);
 }
+.modal-container .footer .safe:hover {
+  background-color: var(--color-soft-gray);
+  color: var(--color-neutral-gray);
+}
+.modal-container .footer .danger:hover {
+  background-color: var(--color-soft-red);
+  color: var(--color-primary-red);
+}
 
 @media screen and (min-width: 1440px) {
   .modal-container {
