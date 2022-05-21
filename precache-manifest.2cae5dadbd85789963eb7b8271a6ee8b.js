@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "1e78141dcb288403b693",
-    "url": "/FrontEndMentor-Solution---Interactive-comments-section/static/css/main.06bc2796.chunk.css"
+    "revision": "c799ad3954839e22d55d",
+    "url": "/FrontEndMentor-Solution---Interactive-comments-section/static/css/main.e9ebd908.chunk.css"
   },
   {
-    "revision": "1e78141dcb288403b693",
-    "url": "/FrontEndMentor-Solution---Interactive-comments-section/static/js/main.bcdbf1b2.chunk.js"
+    "revision": "c799ad3954839e22d55d",
+    "url": "/FrontEndMentor-Solution---Interactive-comments-section/static/js/main.11d7ee31.chunk.js"
   },
   {
     "revision": "2b8f85792f944db8d960",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/FrontEndMentor-Solution---Interactive-comments-section/static/media/icon-reply.145b3d9d.svg"
   },
   {
-    "revision": "affd25208f555d159c446c196aa55c38",
+    "revision": "5c22fc6a7a854d9fd18d3758825ff3c9",
     "url": "/FrontEndMentor-Solution---Interactive-comments-section/index.html"
   }
 ];
