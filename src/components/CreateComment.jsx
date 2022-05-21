@@ -15,7 +15,7 @@ const CreateComment = ({ onReply, comments }) => {
       id: idCounter,
       content: commentText,
       createdAt: "a moment ago",
-      score: 0,
+      score: 1,
       user: {
         image: {
           png: "./images/avatars/image-" + currentUser.username + ".png",
