@@ -34,7 +34,11 @@ function UpdateModal({ closeModal, id, parentId, comment, handleUpdate }) {
             >
               discard
             </button>
-            <button type="submit" className="danger">
+            <button
+              type="submit"
+              className="btn-send"
+              disabled={commentText.length < 1}
+            >
               update!
             </button>
           </div>

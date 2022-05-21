@@ -261,6 +261,10 @@ button {
   background-color: var(--color-soft-blue);
 }
 
+.btn-send:disabled {
+  background-color: var(--color-soft-blue);
+}
+
 @media screen and (min-width: 1272px) {
   .btn {
     grid-template-columns: 1fr;

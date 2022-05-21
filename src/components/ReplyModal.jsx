@@ -9,7 +9,7 @@ const ReplyModal = ({
   handleReply,
 }) => {
   const { currentUser } = getUsers();
-  const [replyText, setReplyText] = useState(false);
+  const [replyText, setReplyText] = useState("");
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
@@ -61,7 +61,11 @@ const ReplyModal = ({
             >
               discard
             </button>
-            <button type="submit" className="danger">
+            <button
+              type="submit"
+              className="btn-send"
+              disabled={replyText.length < 1}
+            >
               reply!
             </button>
           </div>

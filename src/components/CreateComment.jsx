@@ -28,7 +28,6 @@ const CreateComment = ({ onReply, comments }) => {
     onReply(newComment);
     setCommentText("");
   };
-
   return (
     <form onSubmit={handleOnSubmit}>
       <div className="box reply">
@@ -46,7 +45,7 @@ const CreateComment = ({ onReply, comments }) => {
           <img src={currentUser.image.png} alt="profile" />
         </div>
         <div className="reply-action">
-          <button type="submit" className="btn-send btn-score">
+          <button type="submit" className="btn-send" disabled={commentText < 1}>
             send
           </button>
         </div>
