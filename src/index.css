@@ -160,12 +160,10 @@ code {
   }
   .comment-action-2 {
     align-self: center;
-
     grid-area: 1 / 6 / 2 / 7;
   }
   .comment-action-3 {
     align-self: center;
-
     grid-area: 1 / 7 / 2 / 8;
   }
 
