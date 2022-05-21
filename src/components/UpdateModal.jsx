@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "./common/Button";
 
 function UpdateModal({ closeModal, id, parentId, comment, handleUpdate }) {
   const [commentText, setCommentText] = useState(comment.content);
@@ -34,13 +35,12 @@ function UpdateModal({ closeModal, id, parentId, comment, handleUpdate }) {
             >
               discard
             </button>
-            <button
-              className="btn-send"
-              disabled={commentText.length < 1}
-              type="submit"
-            >
-              update!
-            </button>
+            <Button
+              buttonClass="btn-send"
+              buttonText="update!"
+              buttonType="submit"
+              textLength={commentText.length}
+            />
           </div>
         </div>
       </div>

@@ -352,7 +352,7 @@ button {
   margin: 0rem 1rem;
   text-align: center;
   text-transform: uppercase;
-  width: 75%;
+  width: 50%;
 }
 .modal-container .footer .safe {
   background-color: var(--color-neutral-gray);

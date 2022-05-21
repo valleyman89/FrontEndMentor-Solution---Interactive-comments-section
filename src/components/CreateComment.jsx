@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { getUsers } from "../services/user";
-
+import Button from "./common/Button";
 const CreateComment = ({ onReply, comments }) => {
   const { currentUser } = getUsers();
 
@@ -45,9 +45,12 @@ const CreateComment = ({ onReply, comments }) => {
           <img src={currentUser.image.png} alt="profile" />
         </div>
         <div className="reply-action">
-          <button type="submit" className="btn-send" disabled={commentText < 1}>
-            send
-          </button>
+          <Button
+            buttonClass="btn-send"
+            buttonType="submit"
+            buttonText="send"
+            textLength={commentText.length}
+          />
         </div>
       </div>
     </form>

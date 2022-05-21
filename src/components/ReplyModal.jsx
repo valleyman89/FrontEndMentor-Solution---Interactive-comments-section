@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { getUsers } from "../services/user";
+import Button from "./common/Button";
 
 const ReplyModal = ({
   closeModal,
@@ -61,13 +62,12 @@ const ReplyModal = ({
             >
               discard
             </button>
-            <button
-              className="btn-send"
-              disabled={replyText.length < 1}
-              type="submit"
-            >
-              reply!
-            </button>
+            <Button
+              buttonClass="btn-send"
+              buttonText="reply!"
+              buttonType="submit"
+              textLength={replyText.length}
+            />
           </div>
         </div>
       </div>
