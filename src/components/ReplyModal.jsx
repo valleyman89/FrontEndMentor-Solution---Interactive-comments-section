@@ -23,7 +23,7 @@ const ReplyModal = ({
       id: generateNewId,
       content: replyText,
       createdAt: "a moment ago",
-      score: 0,
+      score: 1,
       replyingTo: originalPoster,
       user: {
         image: {
