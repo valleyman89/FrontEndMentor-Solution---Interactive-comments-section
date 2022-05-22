@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: []()
+- Solution URL: [https://www.frontendmentor.io/solutions/reactjs-solution-vanilla-css-altered-design-3qq4EDUnSW](https://www.frontendmentor.io/solutions/reactjs-solution-vanilla-css-altered-design-3qq4EDUnSW)
 - Live Site URL: [https://valleyman89.github.io/FrontEndMentor-Solution---Interactive-comments-section/](https://valleyman89.github.io/FrontEndMentor-Solution---Interactive-comments-section/)
 - GitHub Repo: [https://github.com/valleyman89/FrontEndMentor-Solution---Interactive-comments-section](https://github.com/valleyman89/FrontEndMentor-Solution---Interactive-comments-section)
 
