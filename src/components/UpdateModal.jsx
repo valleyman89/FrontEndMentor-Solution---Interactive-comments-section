@@ -22,7 +22,6 @@ function UpdateModal({ closeModal, id, parentId, comment, handleUpdate }) {
               defaultValue={comment.content}
               name="commentTextArea"
               onChange={(e) => setCommentText(e.target.value)}
-              type="text"
             />
           </div>
           <div className="footer">

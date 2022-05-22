@@ -16,6 +16,7 @@ function ScoreCounter(props) {
       <div className="comment-action-1">
         <div className="btn">
           <button
+            aria-label="increase score"
             className="btn-plus"
             disabled={disable}
             onClick={() => handleVote("up")}
@@ -25,6 +26,7 @@ function ScoreCounter(props) {
           <span className="btn-text btn-score">{count}</span>
           {count === 0 ? null : (
             <button
+              aria-label="decrease score"
               className="btn-minus"
               disabled={disable}
               onClick={() => handleVote("down")}

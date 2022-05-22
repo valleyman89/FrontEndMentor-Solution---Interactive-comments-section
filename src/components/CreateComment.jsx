@@ -35,9 +35,8 @@ const CreateComment = ({ onReply, comments }) => {
           <textarea
             className="input"
             name="commentTextArea"
-            type="text"
-            placeholder="Add a comment..."
             onChange={(e) => setCommentText(e.target.value)}
+            placeholder="Add a comment..."
             value={commentText}
           />
         </div>

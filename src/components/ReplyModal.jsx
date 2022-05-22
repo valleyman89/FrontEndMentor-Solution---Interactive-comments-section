@@ -49,7 +49,6 @@ const ReplyModal = ({
               className="input update"
               name="commentTextArea"
               onChange={(e) => setReplyText(e.target.value)}
-              type="text"
             />
           </div>
           <div className="footer">
